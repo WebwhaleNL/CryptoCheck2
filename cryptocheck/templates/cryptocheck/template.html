@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Cryptocheck</title>
+	
+	<style type="text/css"></style>
+	<link rel="stylesheet" href="{% static 'style_v0.css' %}"/>
+
+	<!-- Add favicon if needed -->
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="contentWrapper">
+	{% block content %}
+
+	{% endblock content %}
+	</div>
+</body>
+</html>

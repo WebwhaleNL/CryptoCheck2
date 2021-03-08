@@ -1,0 +1,158 @@
+
+#loader {
+    border: 8px solid #ffffff; /* Light grey */
+    border-top: 8px solid #80aaa9; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.0s linear infinite;
+
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30px 0 0 -30px; /* half height, half height */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.buttonload {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 24px; /* Some padding */
+    font-size: 16px; /* Set a font-size */
+}
+  
+/* Add a right margin to each icon */
+.fa {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+#headerLogo{
+    width: 100%;
+    position: relative;
+    max-width: 96.5px;
+}
+
+#contentWrapper{
+    position: relative;
+    max-width: 100%;
+    width:auto;
+    height: auto;
+    padding: 55px 60px;
+}
+
+h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+h2{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #7da3a2;
+}
+
+h3{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #9c9c9c;
+}
+
+p, label, input, .myLink{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.myLink:link{color:rgb(64, 178, 248);}
+.myLink:visited{color:rgb(64, 178, 248);}
+.myLink:hover{color:rgb(0, 157, 255);}
+.myLink:active{color:rgb(64, 178, 248);}
+
+#error-message{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color:red;
+}
+
+.rule1{
+    border-top: 1px solid #e9ecef;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: 25px 0;
+}
+
+.bitHeight{
+    position: relative;
+    height:16px;
+}
+
+.col{
+    padding:5px 0 0 0;
+}
+
+#iban-element, input{
+    max-width:300px;
+    width:100%;
+    border:1px solid #e9ecef;
+    border-radius:2px;
+}
+
+#iban-element{
+    margin-top:5px;
+}
+
+input{
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+button{
+    margin:30px 0 0px 0;
+    padding:10px 12px;
+    max-width:300px;
+    width:100%;
+    border:1px solid rgb(182, 182, 182);
+    border-radius:4px;
+    background-color: #5fc1be;
+    color:white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+button:hover{
+    background-color: rgb(109, 109, 109);
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+}
+
+#mandate-acceptance{
+    max-width:600px; 
+    width: 100%;
+}

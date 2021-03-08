@@ -1,0 +1,98 @@
+{% extends 'cryptocheck/template.html' %}
+{% load static %} 
+{% block content %}
+
+   
+<h1>Welkom bij Cryptocheck</h1>
+
+
+<p>Geef coin rank op, waarvan je data wil: </p>
+<input type="number" id="reqRank" name="reqRank" min="1" max="5000">
+
+<button type="button" id="cryptoButton">Load data</button>
+
+<br><br>
+
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:600;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+    </style>
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax">Coin rank</th>
+        <th class="tg-0lax">Coin name</th>
+        <th class="tg-0lax">Coin price ($)</th>
+        <th class="tg-0lax">Coin circulating supply ($)</th>
+        <th class="tg-0lax">Coin market cap ($)</th>
+        <th class="tg-0lax">Data loaded</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax" id="1.1"></td>
+        <td class="tg-0lax" id="1.2"></td>
+        <td class="tg-0lax" id="1.3"></td>
+        <td class="tg-0lax" id="1.4"></td>
+        <td class="tg-0lax" id="1.5"></td>
+        <td class="tg-0lax" id="1.6"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+      </tr>
+    </tbody>
+    </table>
+
+
+<script>
+    // Listen for button click
+    var buttonObject = document.getElementById('cryptoButton');
+    buttonObject.onclick = function(){
+
+        var coinRankID;
+        coinRankID = document.getElementById('reqRank').value;
+        //coinRankID = 2;
+
+        // Get coin data of one coin rank (through server-side)
+        var response1 = fetch('/getCMCdata/' + coinRankID).then(function(response1) {
+            return response1.json();
+        }).then(function(response1Json) {
+
+            //window.alert('Data from server-side = ');
+            //window.alert(response1Json.naam);
+
+            var datafieldSpan1 = document.getElementById('1.1');
+            var datafieldSpan2 = document.getElementById('1.2');
+            var datafieldSpan3 = document.getElementById('1.3');
+            var datafieldSpan4 = document.getElementById('1.4');
+            var datafieldSpan5 = document.getElementById('1.5');
+            var datafieldSpan6 = document.getElementById('1.6');
+
+            datafieldSpan1.textContent = (response1Json.coin_cmc_rank);
+            datafieldSpan2.textContent = (response1Json.coin_name);
+            datafieldSpan3.textContent = (response1Json.coin_price);
+            datafieldSpan4.textContent = (response1Json.coin_cir_supply);
+            datafieldSpan5.textContent = (response1Json.coin_market_cap);
+            datafieldSpan6.textContent = (response1Json.timestamp);
+        });
+
+    };
+    
+
+
+</script>
+
+
+
+	
+{% endblock content %}
